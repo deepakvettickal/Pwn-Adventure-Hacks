@@ -6,21 +6,13 @@ import sys
 
 session = frida.attach("PwnAdventure3-Win32-Shipping.exe")
 script = session.create_script("""
-         //Find "Player::Chat"
-         //send(Process.enumerateModules()[0])
-        //var chat = Module.findExportByName("PwnAdventure3-Win32-Shipping", "?Chat@Player@@UAEXPBD@Z");
          var chat = DebugSymbol.load('GameLogic.dll')
          var chat = DebugSymbol.getFunctionByName('Player::Chat');
-         //console.log(chat)
-         //##var chat = Module.findBaseAddress("GameLogic.dll").add('0x00401000');
-         //send(chat);
-         //console.log("Player::Chat() at  address: " + chat);
-         //send(chat);
-         //var processArr = Process.enumerateModules();
-         //for (var i = 0; i < processArr.length; i++) {
-         // send(processArr[i].name);
-         //}
-         //send(DebugSymbol.fromAddress("0x0401000"))
+         //var location = DebugSymbol.getFunctionByName('Player::GetLookPosition');
+        let that = this;
+         var playerPosMemObj = { x: 0, y: 0, z:0};
+         CalculatePositionPointers();
+        
          Interceptor.attach(chat, {
              onEnter: function (args) { // 0 => this; 1 => cont char* (our text)
                var chatMsg = Memory.readCString(args[0]);
@@ -48,7 +40,7 @@ script = session.create_script("""
                  // Get Player * this location
                  onEnter: function (args) {
                      //console.log("Player at address: " + args[0]);
-                     //this.walkingSpeedAddr = ptr(args[0]).add(736) // Offset m_walkingSpeed
+                     //this.walkingSpeedAddr = ptr(args[0]).add(120) // Offset m_walkingSpeed
                      //console.log("WalkingSpeed at address: " + this.walkingSpeedAddr);
                  },
                  // Get the return value and write the new value
@@ -63,7 +55,15 @@ script = session.create_script("""
             console.log('[chat]:' + value);
             
             if( value.split(" ")[0] == "teleport") {
-              console.log(value.split(" ")[1].split(','));
+              var coord = value.split(" ")[1].split(',');
+              console.log(coord)
+              Memory.writeFloat(playerPosMemObj['x'],parseFloat(coord[0]));
+              Memory.writeFloat(playerPosMemObj['y'],parseFloat(coord[1]));
+              Memory.writeFloat(playerPosMemObj['z'],parseFloat(coord[2]));
+              console.log('Teleporting to location: ' + coord);
+              console.log(playerPosMemObj['x'])
+              console.log(playerPosMemObj['y'])
+              console.log(playerPosMemObj['z'])
             } else {
             switch (value) {
             case "kill cows": 
@@ -75,6 +75,32 @@ script = session.create_script("""
             default:
             }
             }
+         }
+         
+         function CalculatePositionPointers() {   
+           var baseptr = Module.findBaseAddress("PwnAdventure3-Win32-Shipping.exe")
+         //  var baseptr = Module.findBaseAddress("GameLogic.dll")
+         //  var firstStep = Memory.readPointer(ptr(baseptr).add('0x0097D7C'))
+          console.log(firstStep)
+          //var tempBase = Memory.readPointer(ptr(Module.findBaseAddress("GameLogic.dll")).add('0X00097D7C');
+         // console.log()
+           var firstStep = Memory.readPointer(ptr(baseptr).add('0x18FCD60'))
+          var secondStep = Memory.readPointer(ptr(firstStep).add('0x20')) 
+          var thirdStep = Memory.readPointer(ptr(secondStep).add('0x238')) 
+          var forthStep = Memory.readPointer(ptr(thirdStep).add('0x280')) 
+          var fiftStep = ptr(forthStep).add('0x98')
+          playerPosMemObj['x'] = ptr(ptr(fiftStep).sub(8))
+          playerPosMemObj['y'] = ptr(ptr(fiftStep).sub(4))
+          playerPosMemObj['z'] = ptr(fiftStep);
+          //Memory.writeFloat(ptr(fiftStep).sub(8), 0)
+          console.log(Memory.readFloat(playerPosMemObj['x']))
+          console.log(Memory.readFloat(playerPosMemObj['y']))
+          console.log(Memory.readFloat(playerPosMemObj['z']))
+         }
+         
+         
+         function getValueAtMemWithOffset(baseMemory, offset) {
+            return Memory.readUInt(ptr((baseMemory) + offset));
          }     
  """)
 
