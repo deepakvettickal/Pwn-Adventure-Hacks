@@ -78,24 +78,21 @@ script = session.create_script("""
          }
          
          function CalculatePositionPointers() {   
-           var baseptr = Module.findBaseAddress("PwnAdventure3-Win32-Shipping.exe")
-         //  var baseptr = Module.findBaseAddress("GameLogic.dll")
-         //  var firstStep = Memory.readPointer(ptr(baseptr).add('0x0097D7C'))
-          console.log(firstStep)
-          //var tempBase = Memory.readPointer(ptr(Module.findBaseAddress("GameLogic.dll")).add('0X00097D7C');
-         // console.log()
-           var firstStep = Memory.readPointer(ptr(baseptr).add('0x18FCD60'))
-          var secondStep = Memory.readPointer(ptr(firstStep).add('0x20')) 
-          var thirdStep = Memory.readPointer(ptr(secondStep).add('0x238')) 
-          var forthStep = Memory.readPointer(ptr(thirdStep).add('0x280')) 
-          var fiftStep = ptr(forthStep).add('0x98')
-          playerPosMemObj['x'] = ptr(ptr(fiftStep).sub(8))
-          playerPosMemObj['y'] = ptr(ptr(fiftStep).sub(4))
-          playerPosMemObj['z'] = ptr(fiftStep);
-          //Memory.writeFloat(ptr(fiftStep).sub(8), 0)
-          console.log(Memory.readFloat(playerPosMemObj['x']))
-          console.log(Memory.readFloat(playerPosMemObj['y']))
-          console.log(Memory.readFloat(playerPosMemObj['z']))
+            var baseptr = Module.findBaseAddress("GameLogic.dll")
+            var step1 = Memory.readPointer(ptr(baseptr).add('0x0097D7C'))
+            var step2 = Memory.readPointer(ptr(step1).add('0x1C')) 
+            var step3 = Memory.readPointer(ptr(step2).add('0x64')) 
+            var step4 = Memory.readPointer(ptr(step3).add('0x48')) 
+            var step5 = Memory.readPointer(ptr(step4).add('0x4')) 
+            var step6 = Memory.readPointer(ptr(step5).add('0x288')) 
+            var step7 = Memory.readPointer(ptr(step6).add('0xB4')) 
+            var finalStep = ptr(step7).add('0x98')
+            playerPosMemObj['x'] = ptr(ptr(finalStep).sub(8))
+            playerPosMemObj['y'] = ptr(ptr(finalStep).sub(4))
+            playerPosMemObj['z'] = ptr(finalStep);
+            console.log(Memory.readFloat(playerPosMemObj['x']))
+            console.log(Memory.readFloat(playerPosMemObj['y']))
+            console.log(Memory.readFloat(playerPosMemObj['z']))
          }
          
          
