@@ -30,26 +30,45 @@ script = session.create_script("""
                 
              }
          });    
-         
-         var walkSpeed = DebugSymbol.getFunctionByName('Player::GetWalkingSpeed');
-         //console.log("Player::GetWalkingSpeed() at address: " + walkSpeed);
-         
-         // Check Speed
-         Interceptor.attach(walkSpeed,
-             {
-                 // Get Player * this location
-                 onEnter: function (args) {
-                     //console.log("Player at address: " + args[0]);
-                     //this.walkingSpeedAddr = ptr(args[0]).add(120) // Offset m_walkingSpeed
-                     //console.log("WalkingSpeed at address: " + this.walkingSpeedAddr);
-                 },
-                 // Get the return value and write the new value
-                 onLeave: function (retval) {
-                     //console.log("Walking Speed: " + Memory.readFloat(this.walkingSpeedAddr));
-                     //Memory.writeFloat(this.walkingSpeedAddr, 9999);
 
-                 }
-             });
+            var walkSpeed = DebugSymbol.getFunctionByName('Player::GetWalkingSpeed');
+           //console.log("Player::GetWalkingSpeed() at address: " + walkSpeed);
+           var walkSpeedOffset = 0x120;
+           var JumpHoldTimeOffset = 0x128;
+           var JumpSpeedHoldTimeOffset = 0x124;
+
+           var WalkSpeedHack = 9999;
+           var JumpSpeedHack = 9999;
+           var JumpHoldTimeHack = 60;
+           // Check Speed
+           Interceptor.attach(walkSpeed,
+               {
+                   // Get Player * this location
+                   onEnter: function (args) {
+                       //use the Player pointer this = $ecx, therefore only need hook one funciton and modify all valure by using this pointer
+
+                       this.walkSpeedaddr = ptr(this.context.ecx).add(walkSpeedOffset);
+                       this.JumpHoldTime = ptr(this.context.ecx).add(JumpHoldTimeOffset);
+                       this.JumpSpeed = ptr(this.context.ecx).add(JumpSpeedHoldTimeOffset);
+                       this.Health = ptr(this.context.ecx).add(0xbc).sub(0xfc);
+                       dumpAddr("health",this.Health,0x4);
+                       Memory.writeInt(this.Health,102);
+                       console.log("health"+Memory.readInt(this.Health));
+                       Memory.writeFloat(this.walkSpeedaddr,WalkSpeedHack);
+                       Memory.writeFloat(this.JumpSpeed,JumpSpeedHack);
+                       Memory.writeFloat(this.JumpHoldTime,JumpHoldTimeHack);
+
+                   },
+                   // Get the return value and write the new value
+                   onLeave: function (retval) {
+                       //console.log("speed: - "+Memory.readFloat(this.walkSpeedaddr));
+                       //Memory.writeFloat(this.walkSpeedaddr,99999);
+
+                   }
+               });
+    
+
+
          
          function readcommandLine(value) {
             console.log('[chat]:' + value);
