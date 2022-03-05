@@ -6,7 +6,6 @@ def recover_function_name(handler_function_addr, function_offset):
     next_xref_addr = first_xref_addr
 
     def get_string(addr):
-        #print(addr)
         string = ""
         data_byte = idaapi.get_byte(addr)
         while data_byte:
@@ -17,7 +16,6 @@ def recover_function_name(handler_function_addr, function_offset):
         return string
 
     while next_xref_addr != 0xffffffff:
-        print("a")
         #judge "push"
         if idaapi.get_byte(next_xref_addr - function_offset) != 0x68:
             next_xref_addr = idaapi.get_next_fcref_to(handler_function_addr, next_xref_addr)
