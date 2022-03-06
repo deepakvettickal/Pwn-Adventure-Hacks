@@ -6,6 +6,24 @@ import sys
 
 session = frida.attach("PwnAdventure3-Win32-Shipping.exe")
 script = session.create_script("""
+       var position_update_func_addr = ptr("0x0E0E450");
+
+           Interceptor.attach(position_update_func_addr,{
+             onEnter: function(args){
+                 this.update_position_pointer = ptr(this.context.esp).add(0xc);
+             },
+             //asdasd
+             onLeave: function (retval) {
+               //console.log("esp",this.context.esp);
+               //one esp value means one actor use esp to identify actors like rat.
+               console.log("x"+Memory.readFloat(ptr(this.update_position_pointer)));
+               console.log("y"+Memory.readFloat(ptr(this.update_position_pointer).add(4)));
+               console.log("z"+Memory.readFloat(ptr(this.update_position_pointer).add(8)));
+             }
+
+           });
+           
+           
          var chat = DebugSymbol.load('GameLogic.dll')
          var chat = DebugSymbol.getFunctionByName('Player::Chat');
          //var location = DebugSymbol.getFunctionByName('Player::GetLookPosition');
