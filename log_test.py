@@ -10,8 +10,8 @@ script = session.create_script("""
   //var position_update_func_addr = ptr(Module.findBaseAddress('PwnAdventure3-Win32-Shipping.exe').add(0xe62bd0));
   //const position_update_func_addr = ptr(0x0E0E450);
   
-
-  var position_update_func_addr = ptr("0x0E0E450");
+  var exebaseAddr = Module.findBaseAddress('PwnAdventure3-Win32-Shipping.exe');
+  var position_update_func_addr = resolveAddress("0x0E0E450");
 
   Interceptor.attach(position_update_func_addr,{
     onEnter: function(args){
