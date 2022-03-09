@@ -24,16 +24,7 @@ script = session.create_script("""
 
         });
 
-        var IPlayer__AddRef = DebugSymbol.getFunctionByName("IPlayer::AddRef");
-        Interceptor.attach(IPlayer__AddRef,
-            {
-                onEnter: function(args){
-                    this.Playeraddr = this.context.ecx;
-                    this.Playername = Memory.readCString(ptr(this.Playeraddr).add(0x8));
-                    console.log("online Player's name :" + this.Playername);
-                    
-                }
-            });
+
 
 
         var chat = DebugSymbol.load('GameLogic.dll')
@@ -73,7 +64,16 @@ script = session.create_script("""
                 }
             });
 
-
+        var IPlayer__AddRef = DebugSymbol.getFunctionByName("IPlayer::AddRef");
+        Interceptor.attach(IPlayer__AddRef,
+            {
+                onEnter: function(args){
+                    this.Playeraddr = this.context.ecx;
+                    this.Playername = Memory.readCString(ptr(this.Playeraddr).add(0x8));
+                    console.log("online Player's name :" + this.Playername);
+                    
+                }
+            });
 
         var chat = DebugSymbol.getFunctionByName('Player::Chat');
         //var location = DebugSymbol.getFunctionByName('Player::GetLookPosition');
