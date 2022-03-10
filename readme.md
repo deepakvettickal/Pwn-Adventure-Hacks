@@ -66,9 +66,10 @@ Lock health offline model
 
 ### Online players' names
 Get other players' names (in same map).
-
+Output in frida log.
 ### Get enemies' positions
 Get enemies' positions
+Output in frida log.
 ## Authors
 
 Contributors names and contact info
