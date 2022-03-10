@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"mana"</Description>
+      <LastState Value="100" RealAddress="41C9F744"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>BC</Offset>
+        <Offset>10</Offset>
+        <Offset>8</Offset>
+        <Offset>4</Offset>
+        <Offset>4</Offset>
+        <Offset>4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"slot"</Description>
+      <LastState Value="6" RealAddress="41C9F798"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>110</Offset>
+        <Offset>10</Offset>
+        <Offset>8</Offset>
+        <Offset>4</Offset>
+        <Offset>0</Offset>
+        <Offset>4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>154</ID>
+      <Description>"x coordinate"</Description>
+      <LastState Value="34738.82422" RealAddress="13E61490"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>90</Offset>
+        <Offset>B4</Offset>
+        <Offset>288</Offset>
+        <Offset>4</Offset>
+        <Offset>48</Offset>
+        <Offset>64</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>157</ID>
+      <Description>"y coordinate"</Description>
+      <LastState Value="57827.82031" RealAddress="13E61494"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>94</Offset>
+        <Offset>B4</Offset>
+        <Offset>288</Offset>
+        <Offset>4</Offset>
+        <Offset>48</Offset>
+        <Offset>64</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>151</ID>
+      <Description>"z coordinate"</Description>
+      <LastState Value="1940.740845" RealAddress="13E61498"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>98</Offset>
+        <Offset>B4</Offset>
+        <Offset>288</Offset>
+        <Offset>4</Offset>
+        <Offset>48</Offset>
+        <Offset>64</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>279</ID>
+      <Description>"player's view1"</Description>
+      <LastState Value="353.9642639" RealAddress="0FAAEF90"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>250</Offset>
+        <Offset>254</Offset>
+        <Offset>4A8</Offset>
+        <Offset>438</Offset>
+        <Offset>4</Offset>
+        <Offset>148</Offset>
+        <Offset>2C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>280</ID>
+      <Description>"player's view1"</Description>
+      <LastState Value="353.9642639" RealAddress="0FAAEF90"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>250</Offset>
+        <Offset>254</Offset>
+        <Offset>4A8</Offset>
+        <Offset>438</Offset>
+        <Offset>284</Offset>
+        <Offset>24C</Offset>
+        <Offset>1E8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>281</ID>
+      <Description>"player's view1"</Description>
+      <LastState Value="353.9642639" RealAddress="0FAAEF90"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097E48</Address>
+      <Offsets>
+        <Offset>250</Offset>
+        <Offset>224</Offset>
+        <Offset>120</Offset>
+        <Offset>4</Offset>
+        <Offset>48</Offset>
+        <Offset>4</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>282</ID>
+      <Description>"player's view2"</Description>
+      <LastState Value="308.9221802" RealAddress="0FAAEF94"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>254</Offset>
+        <Offset>2FC</Offset>
+        <Offset>84</Offset>
+        <Offset>4</Offset>
+        <Offset>48</Offset>
+        <Offset>4C</Offset>
+        <Offset>164</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>283</ID>
+      <Description>"player's view2"</Description>
+      <LastState Value="308.9221802" RealAddress="0FAAEF94"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>254</Offset>
+        <Offset>2FC</Offset>
+        <Offset>2C4</Offset>
+        <Offset>4</Offset>
+        <Offset>48</Offset>
+        <Offset>4</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>284</ID>
+      <Description>"player's view2"</Description>
+      <LastState Value="308.9221802" RealAddress="0FAAEF94"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097E48</Address>
+      <Offsets>
+        <Offset>254</Offset>
+        <Offset>2FC</Offset>
+        <Offset>2C4</Offset>
+        <Offset>4</Offset>
+        <Offset>48</Offset>
+        <Offset>4</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>287</ID>
+      <Description>"movespeed"</Description>
+      <LastState Value="200" RealAddress="41C9F7A8"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>120</Offset>
+        <Offset>3E0</Offset>
+        <Offset>F8</Offset>
+        <Offset>D0</Offset>
+        <Offset>27C</Offset>
+        <Offset>4</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>288</ID>
+      <Description>"movespeed"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>120</Offset>
+        <Offset>3E0</Offset>
+        <Offset>F8</Offset>
+        <Offset>D0</Offset>
+        <Offset>27C</Offset>
+        <Offset>284</Offset>
+        <Offset>208</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>289</ID>
+      <Description>"jumpspeed"</Description>
+      <LastState Value="420" RealAddress="41C9F7AC"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097E48</Address>
+      <Offsets>
+        <Offset>124</Offset>
+        <Offset>3E0</Offset>
+        <Offset>F8</Offset>
+        <Offset>D0</Offset>
+        <Offset>27C</Offset>
+        <Offset>4</Offset>
+        <Offset>148</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>290</ID>
+      <Description>"jumpspeed"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>194</Offset>
+        <Offset>14</Offset>
+        <Offset>28</Offset>
+        <Offset>4</Offset>
+        <Offset>44</Offset>
+        <Offset>0</Offset>
+        <Offset>14</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>291</ID>
+      <Description>"jumpspeed"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097E48</Address>
+      <Offsets>
+        <Offset>194</Offset>
+        <Offset>14</Offset>
+        <Offset>28</Offset>
+        <Offset>0</Offset>
+        <Offset>0</Offset>
+        <Offset>24</Offset>
+        <Offset>5C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>292</ID>
+      <Description>"jumpspeed"</Description>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>194</Offset>
+        <Offset>98</Offset>
+        <Offset>3C</Offset>
+        <Offset>60</Offset>
+        <Offset>158</Offset>
+        <Offset>178</Offset>
+        <Offset>20C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1684</ID>
+      <Description>"camera angle1"</Description>
+      <LastState Value="-0.02269754373" RealAddress="21EAF6E0"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>80</Offset>
+        <Offset>4</Offset>
+        <Offset>E0</Offset>
+        <Offset>D4</Offset>
+        <Offset>410</Offset>
+        <Offset>4</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1685</ID>
+      <Description>"camera angle1"</Description>
+      <LastState Value="-0.02269754373" RealAddress="21EAF6E0"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>80</Offset>
+        <Offset>4</Offset>
+        <Offset>E0</Offset>
+        <Offset>114</Offset>
+        <Offset>238</Offset>
+        <Offset>4C</Offset>
+        <Offset>164</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1686</ID>
+      <Description>"camera angle2"</Description>
+      <LastState Value="-0.04750334844" RealAddress="21EAF6E4"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>84</Offset>
+        <Offset>4</Offset>
+        <Offset>E0</Offset>
+        <Offset>D4</Offset>
+        <Offset>410</Offset>
+        <Offset>4</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1687</ID>
+      <Description>"camera angle2"</Description>
+      <LastState Value="-0.04750334844" RealAddress="21EAF6E4"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>84</Offset>
+        <Offset>4</Offset>
+        <Offset>E0</Offset>
+        <Offset>D4</Offset>
+        <Offset>410</Offset>
+        <Offset>284</Offset>
+        <Offset>170</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1688</ID>
+      <Description>"camera angle3"</Description>
+      <LastState Value="0.4305259883" RealAddress="21EAF6E8"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>88</Offset>
+        <Offset>4</Offset>
+        <Offset>E0</Offset>
+        <Offset>D4</Offset>
+        <Offset>410</Offset>
+        <Offset>4</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1689</ID>
+      <Description>"camera angle3"</Description>
+      <LastState Value="0.4305259883" RealAddress="21EAF6E8"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>88</Offset>
+        <Offset>4</Offset>
+        <Offset>E0</Offset>
+        <Offset>280</Offset>
+        <Offset>238</Offset>
+        <Offset>4C</Offset>
+        <Offset>164</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1690</ID>
+      <Description>"camera angle4"</Description>
+      <LastState Value="-0.9010413885" RealAddress="21EAF6EC"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>8C</Offset>
+        <Offset>400</Offset>
+        <Offset>18</Offset>
+        <Offset>70</Offset>
+        <Offset>224</Offset>
+        <Offset>4</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1691</ID>
+      <Description>"camera angle4"</Description>
+      <LastState Value="-0.9010413885" RealAddress="21EAF6EC"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>8C</Offset>
+        <Offset>400</Offset>
+        <Offset>18</Offset>
+        <Offset>80</Offset>
+        <Offset>20C</Offset>
+        <Offset>238</Offset>
+        <Offset>164</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1710</ID>
+      <Description>"camerapositionx"</Description>
+      <LastState Value="34738.82422" RealAddress="21EAF6F0"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D7C</Address>
+      <Offsets>
+        <Offset>90</Offset>
+        <Offset>C</Offset>
+        <Offset>20C</Offset>
+        <Offset>238</Offset>
+        <Offset>250</Offset>
+        <Offset>68</Offset>
+        <Offset>1C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1711</ID>
+      <Description>"camerapositionx"</Description>
+      <LastState Value="34738.82422" RealAddress="21EAF6F0"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>90</Offset>
+        <Offset>C</Offset>
+        <Offset>20C</Offset>
+        <Offset>244</Offset>
+        <Offset>398</Offset>
+        <Offset>234</Offset>
+        <Offset>200</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1704</ID>
+      <Description>"camerapositiony"</Description>
+      <LastState Value="57827.82031" RealAddress="21EAF6F4"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>94</Offset>
+        <Offset>C</Offset>
+        <Offset>20C</Offset>
+        <Offset>4C</Offset>
+        <Offset>238</Offset>
+        <Offset>210</Offset>
+        <Offset>54</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1712</ID>
+      <Description>"camerapositionz"</Description>
+      <LastState Value="2004.740723" RealAddress="21EAF6F8"/>
+      <VariableType>Float</VariableType>
+      <Address>"GameLogic.dll"+00097D80</Address>
+      <Offsets>
+        <Offset>98</Offset>
+        <Offset>C</Offset>
+        <Offset>20C</Offset>
+        <Offset>4C</Offset>
+        <Offset>238</Offset>
+        <Offset>210</Offset>
+        <Offset>54</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
