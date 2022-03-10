@@ -26,6 +26,14 @@ python demangle-exports.py > demangled.txt
 ```
 check demangled.txt for output
 
+## Building
+
+Use Microsoft Visual Studio 2022 using the x86 architecture when building the `dllmain.cpp` file.
+
+## Injecting
+
+Use the injector to inject the generated `dash.cpp` file into the running game (PwnAdventure3-Win32-Shipping.exe).
+
 ## Static analysis by IDA
 ### Recover function name
 `Python version = 3.8`
@@ -46,6 +54,9 @@ To lock mana, we could patch program. If we need patch lots of pe files, using f
 ```
 teleport 1000,1000,10000
 ```
+
+### Dash Hack
+After the `dash.dll` file is successfully injected, press F to dash forward, press C to dodge backward, press X to dodge left, and press B to dodge right.
 
 ### Jump and walk
 Using frida to modify value in process to modify speed and hold time.
