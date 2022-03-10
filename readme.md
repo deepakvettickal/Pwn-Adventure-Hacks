@@ -1,13 +1,13 @@
-# P1p2p3
+# Pwn Adventure Hacks
 
-Pawn Adventure Hacks on Windows By Group 13 
+Pwn Adventure Hacks on Windows By Group 13 
 
 ## Description
 
 Implementation of multiple hacks performed using Frida and dll injection.
 
 ## Installing
-    1. Make sure Pawn Adventure is intalled on your system. 
+    1. Make sure Pwn Adventure is intalled on your system. 
     2. install Python on windows.
     3. pip install frida-tools // installs frida on windows
     4. pip install cppmangle (Optional if you want to run demangle-exports.py
