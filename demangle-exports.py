@@ -28,9 +28,5 @@ def on_message(message, data):
         print(message["payload"] + " - " + cdecl_sym(demangle(message["payload"])))
     except:
         print(message["payload"])
-        #print(message["payload"])
-    #print(message["payload"])
-    #print(message["payload"] + " - " + cdecl_sym(demangle(message["payload"])))
-    ##print(message["payload"])
 script.on('message', on_message)
 script.load()

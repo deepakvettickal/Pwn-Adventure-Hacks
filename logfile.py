@@ -81,19 +81,10 @@ script = session.create_script("""
         var playerPosMemObj = { x: 0, y: 0, z: 0 };
         CalculatePositionPointers();
 
+        // Chat function implementation
         Interceptor.attach(chat, {
             onEnter: function (args) { // 0 => this; 1 => cont char* (our text)
                 var chatMsg = Memory.readCString(args[0]);
-                //const myString = Memory.readUtf8String(args[1]);
-
-                //console.log("[chat]:" + myString.toString());
-                //console.log("[Chat]: " + chatMsg);
-                //this.buf = args[1];
-                //this.len = parseInt(args[2]);
-                //log("ssl3_write(" + this.buf.toString() + ", " + this.len.toString() + ")");
-                //var bbuf = Memory.readByteArray(this.buf, this.len);
-                //console.log(chatMsg)
-                //send(args[1].toString())
                 readcommandLine(chatMsg + '')
 
             }
@@ -102,7 +93,7 @@ script = session.create_script("""
 
 
 
-
+        // pasing the data in chat command line 
         function readcommandLine(value) {
             console.log('[chat]:' + value);
 
@@ -113,9 +104,9 @@ script = session.create_script("""
                 Memory.writeFloat(playerPosMemObj['y'], parseFloat(coord[1]));
                 Memory.writeFloat(playerPosMemObj['z'], parseFloat(coord[2]));
                 console.log('Teleporting to location: ' + coord);
-                console.log(playerPosMemObj['x'])
-                console.log(playerPosMemObj['y'])
-                console.log(playerPosMemObj['z'])
+                console.log(Memory.readFloat(playerPosMemObj['x']))
+                console.log(Memory.readFloat(playerPosMemObj['y']))
+                console.log(Memory.readFloat(playerPosMemObj['z']))
             }
         }
 
